@@ -3,33 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/style.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information</title>
 </head>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-light">
+               Go back
+            </a>     
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
 
 
 <body>
     <div class="mainInfo"> 
         <div class="row cardInfo">      
             <label  for="email">E-mail:&emsp;</label>
-            <input id="email" type="text" placeholder="me@example.com" />
+            <input id="email"  class="txtinfo"type="text" placeholder="me@example.com" />
         </div>
 
         <p class="row cardInfo">            
             <label for="username">Username:&emsp;</label>
-            <input id="username boxInfo" type="text" placeholder="Username" />     
+            <input id="username" class="txtinfo" type="text" placeholder="Username" />     
         </p>
 
         <div class="row cardInfo">      
             <label for="name">Name:&emsp;</label>
-            <input id="name boxInfo" type="text" placeholder="First Last" />
+            <input id="name"  class="txtinfo"type="text" placeholder="First Last" />
         </div>
 
         <div class="row cardInfo">      
             <label for="language">Language:&emsp;</label>
-             <select id="language">
+             <select id="language" class="drop">
               <option selected>English</option>
               <option>Spanish</option>
               <option>Etc.</option>
@@ -38,7 +52,7 @@
 
         <div class="row cardInfo">      
             <label for="platform">Preferred Platform:&emsp;</label>
-             <select id="platform">
+             <select id="platform" class="drop">
               <option selected>Windows</option>
               <option>Mac</option>
               <option>Linux</option>
@@ -47,7 +61,7 @@
 
         <div class="row cardInfo">      
             <label for="timezone">Timezone:&emsp;</label>
-             <select id="timezone">
+             <select id="timezone" class="drop">
               <option selected>Central</option>
               <option>West</option>
               <option>East</option>
@@ -56,12 +70,18 @@
 
         <div class="row cardInfo">      
             <label for="topic">Topic:&emsp;</label>
-             <select id="topic">
+             <select id="topic" class="drop">
               <option selected>Meditation</option>
               <option>Releasing</option>
               <option>Etc</option>
             </select>
         </div>
+
+        <div class="buttons submit">
+            <a class="button is-light">
+               Submit
+            </a>     
+          </div>
     </div>
 
     <script src="./assets/script.js"></script>
