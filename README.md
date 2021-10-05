@@ -19,3 +19,5 @@ When you select this option you will be presented with the different users who h
 
 # pick a partner
 When you see somebody who wants to work on the same topic as you. You can click on the button. Once you click on their button you will be presented with their available free time, but in YOUR TIMEZONE. if you find this person to have the same free time as you, you can contact them to start setting up releasing sessions.
+
+   f
