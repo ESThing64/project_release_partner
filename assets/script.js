@@ -34,7 +34,8 @@ console.log("timeNow:", timeNow)
     // var timezones = document.querySelector(""); 
     // var topic = document.querySelector("");
 
-
+    var userList = [];
+    
     function save(){
         var Email = document.getElementById("email").value;
 
@@ -47,7 +48,7 @@ console.log("timeNow:", timeNow)
          var Platforms = document.getElementById("platform").value;
          
          var timezones = document.getElementById("timezone").value;
-         
+         console.log("timezone",timezones);
          var Topic = document.getElementById("topic").value;
      
          var user = {
@@ -60,15 +61,20 @@ console.log("timeNow:", timeNow)
              topic:Topic
          }
 
-         var userstringed = JSON.stringify(user);
-         localStorage.setItem(user.usernames, userstringed);
+         userList.push(user)
+         localStorage.setItem("userList", JSON.stringify(userList));
          console.log(localStorage);
 
     }
     function get(){
-      var x =  localStorage.getItem('user.usernames');
+
       if (localStorage){
-      console.log(x);
+        var x =  JSON.parse(localStorage.getItem('userList'));
+        for (let i = 0; i < x.length; i++) {
+            console.log(x[i]);
+            
+        }
+ 
       }
     }
 
@@ -77,6 +83,16 @@ console.log("timeNow:", timeNow)
       saveBtn.addEventListener("click", save);
 }
 get()
+$(".classes--QD1OT").on("click", function(){
+    var timeslot = $(this).attr("data-timeslot")
+    console.log("click", timeslot);
+    var localUserList=JSON.parse(localStorage.getItem("userList"));
+   var lastUserPosition= localUserList.length - 1;
+   console.log(lastUserPosition);
+   localUserList[lastUserPosition][timeslot]= true;
+
+   localStorage.setItem("userList",JSON.stringify(localUserList))
+})
     //save user end
 
 
