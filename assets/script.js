@@ -66,7 +66,13 @@ console.log("timeNow:", timeNow)
 
 
 //format for changing timezone
-luxon.DateTime.local().setZone("America/New_York").toFormat("hh:mm a")
+let centralTime = luxon.DateTime.local().setZone("America/Chicago").toFormat("hh:mm a")
+let pacificTime = luxon.DateTime.local().setZone("America/Los_Angeles").toFormat("hh:mm a")
+let easternTime = luxon.DateTime.local().setZone("America/New_York").toFormat("hh:mm a")
+
+console.log("Pacific Time: ", pacificTime)
+console.log("Central Time: ", centralTime)
+console.log("Eastern Time", easternTime)
 //format for 24h time
 luxon.DateTime.local().toFormat("HH:mm ");
 //format for am/pm
