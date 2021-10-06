@@ -82,7 +82,9 @@ console.log("timeNow:", timeNow)
  if(saveBtn){  
       saveBtn.addEventListener("click", save);
 }
+
 get()
+
 $(".classes--QD1OT").on("click", function(){
     var timeslot = $(this).attr("data-timeslot")
     console.log("click", timeslot);
@@ -120,3 +122,4 @@ localStorage.setItem("maintime", mainTime)
 let timeZoneEl = $('#time-zone').val
 
 console.log(timeZoneEl)
+
