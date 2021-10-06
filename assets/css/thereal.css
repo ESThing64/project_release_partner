@@ -85,3 +85,7 @@ posR--2Dy7A {
 .posR--2Dy7A {
     position: relative;
 }
+
+#current-time {
+    text-align: center;
+}
