@@ -90,6 +90,7 @@ luxon.DateTime.local().toFormat("HH:mm ");
 //format for am/pm
 luxon.DateTime.local().toFormat("hh:mm a")
 
-//adding time to the sc.htmls
+//adding time to the sc.html h1 tag
 $("#current-time").text(timeNow)
 //hello
+localStorage.setItem("maintime", mainTime)
