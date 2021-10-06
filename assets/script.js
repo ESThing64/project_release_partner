@@ -60,8 +60,8 @@ console.log("timeNow:", timeNow)
              topic:Topic
          }
 
-         var userstringed = JSON.stringify(user);
-         localStorage.setItem(user.usernames, userstringed);
+         
+         localStorage.setItem(user.usernames, JSON.stringify(user));
          console.log(localStorage);
 
     }
