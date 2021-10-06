@@ -18,13 +18,12 @@ body {
 }
 
 .main{
-    background-color: cadetblue;
     margin: auto;
     margin-top: 1%;
     margin-bottom: 1%;
     width: 100%;
     height: 100%;
-    border: 3px solid black;
+    border: 0px solid black;
     padding: 1%;
     display:inline-flex;
     flex-wrap: nowrap;
@@ -34,16 +33,29 @@ body {
 }
 
 .card{
-    background-color: cornflowerblue;
+    font-size: 32px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(12, 12, 26);
+    background: linear-gradient(3deg, rgb(148, 148, 177) 0%, rgba(187,187,224,1) 18%, rgb(250, 254, 255) 100%);
     margin: 1%;
-    margin-left: 15%;
+    margin-left: 18%;
     width: 25%;
     height: 100%;
     padding: 5%;
+    padding-left: 5%;
     font-display: center;
     align-content: center;
-    border: 3px solid black;
+    /* border: 2px solid rgb(156, 159, 168); */
 }
+
+.card a {
+    color:rgb(125, 125, 245);
+  }
+
+  .card a:hover {
+    color:rgb(152, 131, 245);
+    font-size: 103%;
+  }
 
 
 .mainInfo{
@@ -67,7 +79,7 @@ body {
     width: 20%;
     height: 100%;
     padding: 1%;
-    border: 2px solid rgb(73, 74, 77);
+    /* border: 2px solid rgb(73, 74, 77); */
     border-radius: 10px;
 
 }
@@ -106,7 +118,7 @@ body {
     color: black;
     font-size: 20px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: rgb(188, 196, 211);
+    background: linear-gradient(1deg, rgb(113, 112, 124) 0%, rgba(187,187,224,1) 18%, rgb(250, 254, 255) 100%);
     margin: 2%;
     margin-left: 2%;
     margin-top: 1%;
@@ -115,7 +127,8 @@ body {
     padding: 1%;
     font-display: center;
     align-content:center;
-    border: 3px solid black;
+    border: 0px solid black;
+    border-radius: 20px;
 }
 
 .submit{
