@@ -73,7 +73,9 @@ console.log("timeNow:", timeNow)
     }
 
     var saveBtn = document.querySelector(".submit");
-    saveBtn.addEventListener("click", save);
+ if(saveBtn){  
+      saveBtn.addEventListener("click", save);
+}
 get()
     //save user end
 
