@@ -66,11 +66,17 @@ console.log("timeNow:", timeNow)
 
     }
     function get(){
+      var x =  localStorage.getItem('user.usernames');
+      if (localStorage){
+      console.log(x);
+      }
     }
 
     var saveBtn = document.querySelector(".submit");
-    saveBtn.addEventListener("click", save);
-
+ if(saveBtn){  
+      saveBtn.addEventListener("click", save);
+}
+get()
     //save user end
 
 
