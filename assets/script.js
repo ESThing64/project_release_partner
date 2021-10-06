@@ -101,6 +101,6 @@ $("#current-time").text(timeNow)
 //hello
 localStorage.setItem("maintime", mainTime)
 
-let timeZoneEl = $('#time-zone')
+let timeZoneEl = $('#time-zone').val
 
 console.log(timeZoneEl)
