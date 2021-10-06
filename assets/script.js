@@ -37,29 +37,41 @@ console.log("timeNow:", timeNow)
 
     function save(){
         var Email = document.getElementById("email").value;
-         localStorage.setItem("email1", Email)
+
          var usernames = document.getElementById("username").value;
-         localStorage.setItem("username1", usernames)
+         
          var names = document.getElementById("name").value;
-         localStorage.setItem("names1", names)
+
          var langauges = document.getElementById("language").value;
-         localStorage.setItem("languages1", langauges)
+         
          var Platforms = document.getElementById("platform").value;
-         localStorage.setItem("plats1", Platforms)
+         
          var timezones = document.getElementById("timezone").value;
-         localStorage.setItem("timezones1", timezones)
+         
          var Topic = document.getElementById("topic").value;
-         localStorage.setItem("Topic1", Topic)
      
+         var user = {
+             email: Email,
+             usernames: usernames,
+             name: names,
+             langauge: langauges,
+             platform: Platforms,
+             timezone:timezones,
+             topic:Topic
+         }
+
+         var userstringed = JSON.stringify(user);
+         localStorage.setItem(user.usernames, userstringed);
+         console.log(localStorage);
+
     }
     function get(){
     }
 
     var saveBtn = document.querySelector(".submit");
-    // saveBtn.addEventListener("click", save);
+    saveBtn.addEventListener("click", save);
 
     //save user end
-
 
 
     //Luxon Time - use below for reference 
@@ -80,3 +92,4 @@ luxon.DateTime.local().toFormat("hh:mm a")
 
 //adding time to the sc.htmls
 $("#current-time").text(timeNow)
+//hello
