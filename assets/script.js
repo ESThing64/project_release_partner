@@ -1,19 +1,29 @@
+//variables 
+
+//Main time is used to compare our app to any other timezone.
+const mainTime = luxon.DateTime.local().setZone("America/Chicago").toFormat("HH:mm")
+const timeNow = luxon.DateTime.local().toFormat("hh:mm a")
 let backgroundUrl = "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=meditation"
 let imgAuthEl = document.getElementById("img-auth")
-fetch(backgroundUrl)
-    .then(function(response) {
-        console.log(response)
-        return response.json()
-            .then(function(data) {
 
-                document.body.style.backgroundImage = `url(${data.urls.full})`
-                imgAuthEl.textContent = "By: " + data.user.name
+console.log("mainTime:", mainTime)
+console.log("timeNow:", timeNow)
 
-            })
-    })
-    .catch(function() {
-        document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTEwMjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjI4NDE2NzA&ixlib=rb-1.2.1&q=80&w=1080)`
-    })
+//Back ground api fetch- blocked it until we have a plan for styling
+// fetch(backgroundUrl)
+//     .then(function(response) {
+//         console.log(response)
+//         return response.json()
+//             .then(function(data) {
+
+//                 document.body.style.backgroundImage = `url(${data.urls.full})`
+//                 imgAuthEl.textContent = "By: " + data.user.name
+
+//             })
+//     })
+//     .catch(function() {
+//         document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTEwMjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjI4NDE2NzA&ixlib=rb-1.2.1&q=80&w=1080)`
+//     })
 
 //save user start
     
@@ -46,6 +56,21 @@ fetch(backgroundUrl)
     }
 
     var saveBtn = document.querySelector(".submit");
-    saveBtn.addEventListener("click", save);
+    // saveBtn.addEventListener("click", save);
 
     //save user end
+
+
+
+    //Luxon Time - use below for reference 
+
+
+//format for changing timezone
+luxon.DateTime.local().setZone("America/New_York").toFormat("hh:mm a")
+//format for 24h time
+luxon.DateTime.local().toFormat("HH:mm ");
+//format for am/pm
+luxon.DateTime.local().toFormat("hh:mm a")
+
+//adding time to the sc.htmls
+$("#current-time").text(timeNow)
