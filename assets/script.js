@@ -100,3 +100,7 @@ luxon.DateTime.local().toFormat("hh:mm a")
 $("#current-time").text(timeNow)
 //hello
 localStorage.setItem("maintime", mainTime)
+
+let timeZoneEl = $('#time-zone')
+
+console.log(timeZoneEl)
