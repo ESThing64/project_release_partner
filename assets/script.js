@@ -82,7 +82,9 @@ console.log("timeNow:", timeNow)
  if(saveBtn){  
       saveBtn.addEventListener("click", save);
 }
+
 get()
+
 $(".classes--QD1OT").on("click", function(){
     var timeslot = $(this).attr("data-timeslot")
     console.log("click", timeslot);
@@ -112,6 +114,12 @@ luxon.DateTime.local().toFormat("HH:mm ");
 //format for am/pm
 luxon.DateTime.local().toFormat("hh:mm a")
 
-//adding time to the sc.htmls
+//adding time to the sc.html h1 tag
 $("#current-time").text(timeNow)
 //hello
+localStorage.setItem("maintime", mainTime)
+
+let timeZoneEl = $('#time-zone').val
+
+console.log(timeZoneEl)
+
