@@ -24,6 +24,33 @@
   </div>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+    function addDarkmodeWidget() {
+      new Darkmode().showWidget();
+    }
+    window.addEventListener('load', addDarkmodeWidget)
+  
+  var checkbox = document.querySelector('input[name=theme]');
+  
+  checkbox.addEventListener('change', function() {
+      if(this.checked) {
+          trans()
+          document.documentElement.setAttribute('data-theme', 'dark')
+      } else {
+          trans()
+          document.documentElement.setAttribute('data-theme', 'light')
+      }
+  })
+  
+  let trans = () => {
+      document.documentElement.classList.add('transition');
+      window.setTimeout(() => {
+          document.documentElement.classList.remove('transition')
+      }, 1000)
+  }
+
+  </script>
     <div id="tim">
     <h1 id="current-time"></h1>
     </div>

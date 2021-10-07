@@ -1,0 +1,38 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+html[data-theme='dark'] {
+    --bg:#1f1b1b;
+    --bg-panel: #151313;
+    --color-headings: #3694FF;
+    --color-text: #B5B5B5;
+}
+
+body {
+    background-color: var(--bg);
+    
+    .darkmode--activated p, .darkmode--activated li {
+        color: #000;
+    }
+      
+      .button {
+        isolation: isolate;
+      }
+    .darkmode--activated .logo {
+        mix-blend-mode: difference;
+      }
+      
+}
+  
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *::after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important; 
+
+}
