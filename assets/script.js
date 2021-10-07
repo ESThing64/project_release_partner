@@ -5,7 +5,6 @@ const mainTime = luxon.DateTime.local().setZone("America/Chicago").toFormat("HH:
 const timeNow = luxon.DateTime.local().toFormat("hh:mm a");
 let backgroundUrl = "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=meditation";
 let imgAuthEl = document.getElementById("img-auth");
-var selectusername = $(".user");
 var loadPageBtn = $("#loadpage");
 console.log("mainTime:", mainTime);
 console.log("timeNow:", timeNow);
@@ -69,16 +68,52 @@ console.log(selectusername);
        
     }
 
-
-
-loadPageBtn.on("click", function (){
-console.log("hey");
-
+    var selectusername = $(".user");
+    var test = $("#test")
+    var mainCont = $(".maincontainer")
+    
     var x =  JSON.parse(localStorage.getItem('userList'));
 
     for (let i = 0; i < x.length; i++) {
+    var container = $("<div class = 'container col-3'>")
+        // for (let j = 0; j < 5; j++) {
+            var userRow = $("<div class = 'row'>")
+            userRow.text("username : "+x[i].usernames)
+
+            var langRow = $("<div class = 'row'>")
+            langRow.text("Langauge : "+x[i].langauge)
+
+            var platRow = $("<div class = 'row'>")
+            platRow.text("Platform : "+x[i].platform)
+
+            var topicRow = $("<div class = 'row'>")
+            topicRow.text("Topic : "+x[i].topic)
+
+            var userRow = $("<div class = 'row'>")
+            userRow.text("username : "+x[i].usernames)
+        // }
+        container.append(platRow);
+        container.append(topicRow);
+        container.append(userRow);
+        container.append(langRow);
+        mainCont.append(container)
+        
+    }
+    test.text(x[0].usernames);
+loadPageBtn.on("click", function (){
+
+
+
+
+
+console.log(x[0].usernames);
+    // (selectusername[0])
+
+    for (let i = 0; i < x.length; i++) {
         console.log(x[i].usernames)
-        console.log(typeof(selectusername));
+        console.log(selectusername);
+       
+        // selectusername
         // (selectusername[i]).text(x[i].usernames)
         // console.log(selectusername[0]);
         // (selectusername[i]).textContent= x[i].langauge
@@ -140,23 +175,23 @@ let timeZoneEl = $('#time-zone').val
 
 console.log(timeZoneEl)
 
-function save() {
-    var checkbox = document.querySelector('input[name=theme]');
+// function save() {
+//     var checkbox = document.querySelector('input[name=theme]');
 
-checkbox.addEventListener('change', function() {
-    if(this.checked) {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'dark')
-    } else {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'light')
-    }
-})
+// checkbox.addEventListener('change', function() {
+//     if(this.checked) {
+//         trans()
+//         document.documentElement.setAttribute('data-theme', 'dark')
+//     } else {
+//         trans()
+//         document.documentElement.setAttribute('data-theme', 'light')
+//     }
+// })
 
-let trans = () => {
-    document.documentElement.classList.add('transition');
-    window.setTimeout(() => {
-        document.documentElement.classList.remove('transition')
-    }, 1000)
-}
-}
+// let trans = () => {
+//     document.documentElement.classList.add('transition');
+//     window.setTimeout(() => {
+//         document.documentElement.classList.remove('transition')
+//     }, 1000)
+// }
+// }
