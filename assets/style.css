@@ -9,6 +9,13 @@
 
 }
 
+html,[data-theme='dark'] {
+    --bg:#292929;
+    --bg-panel: #110f0f;
+    --color-headings: #3694FF;
+    --color-text: #B5B5B5;
+}
+
 .main{
     margin: auto;
     margin-top: 10%;
@@ -81,5 +88,14 @@ body {
     -o-background-size: cover;
     background-size: cover;
     height:max-content;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *::after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important; 
+
 }
 
