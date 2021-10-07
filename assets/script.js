@@ -6,6 +6,31 @@ const timeNow = luxon.DateTime.local().toFormat("hh:mm a")
 let backgroundUrl = "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=meditation"
 let imgAuthEl = document.getElementById("img-auth")
 
+
+
+// var M7 = document.getElementById("M7");
+
+
+// M7.addEventListener('click', turnGreen);
+
+
+// function turnGreen() {
+//     M7.setAttribute("class", "classes--QD1OT nowGreen");;
+
+//     // if ("m-7" == false){
+//     // M7.setAttribute("class", "classes--QD1OT nowGreen");;
+//     //     "m-7" == true;
+//     // }
+//     // else{
+//     //     M7.removeAttribute("class", "nowGreen");;
+//     //     M7.setAttribute("class", "classes--QD1OT");;
+//     //     "m-7" == false;
+//     // }
+// };
+
+
+
+
 console.log("mainTime:", mainTime)
 console.log("timeNow:", timeNow)
 
@@ -87,11 +112,16 @@ get()
 
 $(".classes--QD1OT").on("click", function(){
     var timeslot = $(this).attr("data-timeslot")
+    var changeGreen = $(this).addClass("nowgreen")
+    
     console.log("click", timeslot);
     var localUserList=JSON.parse(localStorage.getItem("userList"));
    var lastUserPosition= localUserList.length - 1;
    console.log(lastUserPosition);
+
    localUserList[lastUserPosition][timeslot]= true;
+  
+
 
    localStorage.setItem("userList",JSON.stringify(localUserList))
 })
