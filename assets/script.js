@@ -1,13 +1,15 @@
 //variables 
 
 //Main time is used to compare our app to any other timezone.
-const mainTime = luxon.DateTime.local().setZone("America/Chicago").toFormat("HH:mm")
-const timeNow = luxon.DateTime.local().toFormat("hh:mm a")
-let backgroundUrl = "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=meditation"
-let imgAuthEl = document.getElementById("img-auth")
-
-console.log("mainTime:", mainTime)
-console.log("timeNow:", timeNow)
+const mainTime = luxon.DateTime.local().setZone("America/Chicago").toFormat("HH:mm");
+const timeNow = luxon.DateTime.local().toFormat("hh:mm a");
+let backgroundUrl = "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=meditation";
+let imgAuthEl = document.getElementById("img-auth");
+var selectusername = $(".user");
+var loadPageBtn = $("#loadpage");
+console.log("mainTime:", mainTime);
+console.log("timeNow:", timeNow);
+console.log(selectusername);
 
 //Back ground api fetch- blocked it until we have a plan for styling
 // fetch(backgroundUrl)
@@ -64,26 +66,36 @@ console.log("timeNow:", timeNow)
          userList.push(user)
          localStorage.setItem("userList", JSON.stringify(userList));
          console.log(localStorage);
-
+       
     }
-    function get(){
 
-      if (localStorage){
-        var x =  JSON.parse(localStorage.getItem('userList'));
-        for (let i = 0; i < x.length; i++) {
-            console.log(x[i]);
-            
-        }
- 
-      }
+
+
+loadPageBtn.on("click", function (){
+console.log("hey");
+
+    var x =  JSON.parse(localStorage.getItem('userList'));
+
+    for (let i = 0; i < x.length; i++) {
+        console.log(x[i].usernames)
+        console.log(typeof(selectusername));
+        // (selectusername[i]).text(x[i].usernames)
+        // console.log(selectusername[0]);
+        // (selectusername[i]).textContent= x[i].langauge
+        // (selectusername[i]).textContent= x[i].platform
+        // (selectusername[i]).textContent= x[i].timezone
+        // (selectusername[i]).textContent= x[i].topics
     }
+
+  })
+
 
     var saveBtn = document.querySelector(".submit");
  if(saveBtn){  
       saveBtn.addEventListener("click", save);
 }
 
-get()
+
 
 $(".classes--QD1OT").on("click", function(){
     var timeslot = $(this).attr("data-timeslot")
