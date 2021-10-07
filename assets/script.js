@@ -45,8 +45,8 @@ function save() {
 
     var Platforms = document.getElementById("platform").value;
 
-    var timezones = document.getElementById("timezone").value;
-    console.log("timezone", timezones);
+    // var timezones = document.getElementById("timezone").value;
+    // console.log("timezone", timezones);
     var Topic = document.getElementById("topic").value;
 
     var user = {
@@ -55,7 +55,7 @@ function save() {
         name: names,
         langauge: langauges,
         platform: Platforms,
-        timezone: timezones,
+        // timezone: timezones,
         topic: Topic
     }
 
@@ -90,11 +90,13 @@ var selectusername = $(".user");
 
         var userRow = $("<div class = 'row'>")
         userRow.text("username : " + x[i].usernames)
+        //add email here
         // }
-        container.append(platRow);
-        container.append(topicRow);
         container.append(userRow);
+        container.append(topicRow);
+        container.append(platRow);
         container.append(langRow);
+        //add email here
         mainCont.append(container)
 
     }
@@ -207,25 +209,7 @@ var selectusername = $(".user");
 )
 
 
-    
-// console.log(x[0].usernames);
-//     // (selectusername[0])
 
-//     for (let i = 0; i < x.length; i++) {
-//         console.log(x[i].usernames)
-//         console.log(selectusername);
-
-//         // selectusername
-//         // (selectusername[i]).text(x[i].usernames)
-//         // console.log(selectusername[0]);
-//         // (selectusername[i]).textContent= x[i].langauge
-//         // (selectusername[i]).textContent= x[i].platform
-//         // (selectusername[i]).textContent= x[i].timezone
-//         // (selectusername[i]).textContent= x[i].topics
-//     }
-// }
-
-//   )
 
 
 var saveBtn = document.querySelector(".submit");
@@ -250,7 +234,7 @@ $(".classes--QD1OT").on("click", function () {
 
     localStorage.setItem("userList", JSON.stringify(localUserList))
 })
-//save user end
+
 
 
 //Luxon Time - use below for reference 
@@ -261,9 +245,7 @@ let centralTime = luxon.DateTime.local().setZone("America/Chicago").toFormat("hh
 let pacificTime = luxon.DateTime.local().setZone("America/Los_Angeles").toFormat("hh:mm a")
 let easternTime = luxon.DateTime.local().setZone("America/New_York").toFormat("hh:mm a")
 
-console.log("Pacific Time: ", pacificTime)
-console.log("Central Time: ", centralTime)
-console.log("Eastern Time", easternTime)
+
 //format for 24h time
 luxon.DateTime.local().toFormat("HH:mm ");
 //format for am/pm
@@ -271,17 +253,12 @@ luxon.DateTime.local().toFormat("hh:mm a")
 
 //adding time to the sc.html h1 tag
 $("#current-time").text(timeNow)
-//hello
+//Set time to local storage
 localStorage.setItem("maintime", mainTime)
 
 let timeZoneEl = $('#time-zone').val
 
-console.log(timeZoneEl)
 
-
-//loop over object find true val
-//grab the key
-//if m
 
 
 
