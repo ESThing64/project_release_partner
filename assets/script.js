@@ -134,6 +134,7 @@ let timeZoneEl = $('#time-zone').val
 
 console.log(timeZoneEl)
 
+
 //loop over object find true val
 //grab the key
 //if m
@@ -260,3 +261,25 @@ for (const key in addTime[0]) {
 //     }, 1000)
 // }
 // }
+
+// function save() {
+//     var checkbox = document.querySelector('input[name=theme]');
+
+// checkbox.addEventListener('change', function() {
+//     if(this.checked) {
+//         trans()
+//         document.documentElement.setAttribute('data-theme', 'dark')
+//     } else {
+//         trans()
+//         document.documentElement.setAttribute('data-theme', 'light')
+//     }
+// })
+
+// let trans = () => {
+//     document.documentElement.classList.add('transition');
+//     window.setTimeout(() => {
+//         document.documentElement.classList.remove('transition')
+//     }, 1000)
+// }
+// }
+

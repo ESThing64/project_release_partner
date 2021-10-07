@@ -11,7 +11,7 @@
     height:max-content;
 }
 
-html,
+
 body {
     margin: 0;
     padding: 0;
@@ -30,7 +30,7 @@ body {
     align-content: center;
     flex: 1 0 100%; 
 
-}
+} 
 
 .card{
     font-size: 32px;
@@ -143,4 +143,29 @@ body {
     width: 20%;
     height: 30%;
     border: 0px solid black;
+}
+
+html {
+    font-family: 'Monserrat';
+
+    --bg:#FCFCFC;
+    --bg-panel: #ebebeb;
+    --color-headings: #0077FF;
+    --color-text: #333;
+}
+
+html[data-theme='dark'] {
+    --bg:#1f1b1b;
+    --bg-panel: #151313;
+    --color-headings: #3694FF;
+    --color-text: #B5B5B5;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *::after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important; 
+
 }
