@@ -99,11 +99,16 @@ console.log("hey");
 
 $(".classes--QD1OT").on("click", function(){
     var timeslot = $(this).attr("data-timeslot")
+    var changeGreen = $(this).addClass("nowgreen")
+    
     console.log("click", timeslot);
     var localUserList=JSON.parse(localStorage.getItem("userList"));
    var lastUserPosition= localUserList.length - 1;
    console.log(lastUserPosition);
+
    localUserList[lastUserPosition][timeslot]= true;
+  
+
 
    localStorage.setItem("userList",JSON.stringify(localUserList))
 })
