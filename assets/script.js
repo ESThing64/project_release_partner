@@ -1,18 +1,14 @@
 //variables 
 
 //Main time is used to compare our app to any other timezone.
-const mainTime = luxon.DateTime.local().setZone("America/Chicago").toFormat("HH:mm")
-const timeNow = luxon.DateTime.local().toFormat("hh:mm a")
-let backgroundUrl = "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=meditation"
-let imgAuthEl = document.getElementById("img-auth")
-
-
-
-
-
-
-console.log("mainTime:", mainTime)
-console.log("timeNow:", timeNow)
+const mainTime = luxon.DateTime.local().setZone("America/Chicago").toFormat("HH:mm");
+const timeNow = luxon.DateTime.local().toFormat("hh:mm a");
+let backgroundUrl = "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=meditation";
+let imgAuthEl = document.getElementById("img-auth");
+var loadPageBtn = $("#loadpage");
+console.log("mainTime:", mainTime);
+console.log("timeNow:", timeNow);
+console.log(selectusername);
 
 //Back ground api fetch- blocked it until we have a plan for styling
 // fetch(backgroundUrl)
@@ -31,65 +27,108 @@ console.log("timeNow:", timeNow)
 //     })
 
 //save user start
+    
+    // var username = document.querySelector("");
+    // var name = document.querySelector("");
+    // var langauge = document.querySelector("");
+    // var platform = document.querySelector("");
+    // var timezones = document.querySelector(""); 
+    // var topic = document.querySelector("");
 
-// var username = document.querySelector("");
-// var name = document.querySelector("");
-// var langauge = document.querySelector("");
-// var platform = document.querySelector("");
-// var timezones = document.querySelector(""); 
-// var topic = document.querySelector("");
+    var userList = [];
+    
+    function save(){
+        var Email = document.getElementById("email").value;
 
-var userList = [];
+         var usernames = document.getElementById("username").value;
+         
+         var names = document.getElementById("name").value;
 
-function save() {
-    var Email = document.getElementById("email").value;
+         var langauges = document.getElementById("language").value;
+         
+         var Platforms = document.getElementById("platform").value;
+         
+         var timezones = document.getElementById("timezone").value;
+         console.log("timezone",timezones);
+         var Topic = document.getElementById("topic").value;
+     
+         var user = {
+             email: Email,
+             usernames: usernames,
+             name: names,
+             langauge: langauges,
+             platform: Platforms,
+             timezone:timezones,
+             topic:Topic
+         }
 
-    var usernames = document.getElementById("username").value;
-
-    var names = document.getElementById("name").value;
-
-    var langauges = document.getElementById("language").value;
-
-    var Platforms = document.getElementById("platform").value;
-
-    var timezones = document.getElementById("timezone").value;
-    console.log("timezone", timezones);
-    var Topic = document.getElementById("topic").value;
-
-    var user = {
-        email: Email,
-        usernames: usernames,
-        name: names,
-        langauge: langauges,
-        platform: Platforms,
-        timezone: timezones,
-        topic: Topic
+         userList.push(user)
+         localStorage.setItem("userList", JSON.stringify(userList));
+         console.log(localStorage);
+       
     }
 
-    userList.push(user)
-    localStorage.setItem("userList", JSON.stringify(userList));
-    console.log(localStorage);
-    // location.href = "./schedule.html"
+    var selectusername = $(".user");
+    var test = $("#test")
+    var mainCont = $(".maincontainer")
+    
+    var x =  JSON.parse(localStorage.getItem('userList'));
 
-}
-function get() {
+    for (let i = 0; i < x.length; i++) {
+    var container = $("<div class = 'container col-3'>")
+        // for (let j = 0; j < 5; j++) {
+            var userRow = $("<div class = 'row'>")
+            userRow.text("username : "+x[i].usernames)
 
-    if (localStorage) {
-        var x = JSON.parse(localStorage.getItem('userList'));
-        for (let i = 0; i < x.length; i++) {
-            console.log(x[i]);
+            var langRow = $("<div class = 'row'>")
+            langRow.text("Langauge : "+x[i].langauge)
 
-        }
+            var platRow = $("<div class = 'row'>")
+            platRow.text("Platform : "+x[i].platform)
 
+            var topicRow = $("<div class = 'row'>")
+            topicRow.text("Topic : "+x[i].topic)
+
+            var userRow = $("<div class = 'row'>")
+            userRow.text("username : "+x[i].usernames)
+        // }
+        container.append(platRow);
+        container.append(topicRow);
+        container.append(userRow);
+        container.append(langRow);
+        mainCont.append(container)
+        
     }
+    test.text(x[0].usernames);
+// loadPageBtn.on("click", function (){
+
+
+// console.log(x[0].usernames);
+//     // (selectusername[0])
+
+//     for (let i = 0; i < x.length; i++) {
+//         console.log(x[i].usernames)
+//         console.log(selectusername);
+       
+//         // selectusername
+//         // (selectusername[i]).text(x[i].usernames)
+//         // console.log(selectusername[0]);
+//         // (selectusername[i]).textContent= x[i].langauge
+//         // (selectusername[i]).textContent= x[i].platform
+//         // (selectusername[i]).textContent= x[i].timezone
+//         // (selectusername[i]).textContent= x[i].topics
+//     }
+// }
+
+//   )
+
+
+    var saveBtn = document.querySelector(".submit");
+ if(saveBtn){  
+      saveBtn.addEventListener("click", save);
 }
 
-var saveBtn = document.querySelector(".submit");
-if (saveBtn) {
-    saveBtn.addEventListener("click", save);
-}
 
-get()
 
 $(".classes--QD1OT").on("click", function () {
     var timeslot = $(this).attr("data-timeslot")
@@ -261,25 +300,3 @@ for (const key in addTime[0]) {
 //     }, 1000)
 // }
 // }
-
-// function save() {
-//     var checkbox = document.querySelector('input[name=theme]');
-
-// checkbox.addEventListener('change', function() {
-//     if(this.checked) {
-//         trans()
-//         document.documentElement.setAttribute('data-theme', 'dark')
-//     } else {
-//         trans()
-//         document.documentElement.setAttribute('data-theme', 'light')
-//     }
-// })
-
-// let trans = () => {
-//     document.documentElement.classList.add('transition');
-//     window.setTimeout(() => {
-//         document.documentElement.classList.remove('transition')
-//     }, 1000)
-// }
-// }
-
