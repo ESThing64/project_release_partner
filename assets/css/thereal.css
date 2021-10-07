@@ -90,6 +90,20 @@ posR--2Dy7A {
     text-align: center;
 }
 
+html {
+    font-family: 'Monserrat';
+
+    --bg:#FCFCFC;
+    --bg-panel: #ebebeb;
+    --color-headings: #0077FF;
+    --color-text: #333;
+}
+
+html[data-theme='dark'] {
+    --bg:#1f1b1b;
+    --bg-panel: #151313;
+    --color-headings: #3694FF;
+    --color-text: #B5B5B5;
 
 .nowgreen{
     background-color: green;
