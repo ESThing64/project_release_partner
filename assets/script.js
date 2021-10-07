@@ -8,26 +8,6 @@ let imgAuthEl = document.getElementById("img-auth")
 
 
 
-// var M7 = document.getElementById("M7");
-
-
-// M7.addEventListener('click', turnGreen);
-
-
-// function turnGreen() {
-//     M7.setAttribute("class", "classes--QD1OT nowGreen");;
-
-//     // if ("m-7" == false){
-//     // M7.setAttribute("class", "classes--QD1OT nowGreen");;
-//     //     "m-7" == true;
-//     // }
-//     // else{
-//     //     M7.removeAttribute("class", "nowGreen");;
-//     //     M7.setAttribute("class", "classes--QD1OT");;
-//     //     "m-7" == false;
-//     // }
-// };
-
 
 
 
@@ -51,66 +31,67 @@ console.log("timeNow:", timeNow)
 //     })
 
 //save user start
-    
-    // var username = document.querySelector("");
-    // var name = document.querySelector("");
-    // var langauge = document.querySelector("");
-    // var platform = document.querySelector("");
-    // var timezones = document.querySelector(""); 
-    // var topic = document.querySelector("");
 
-    var userList = [];
-    
-    function save(){
-        var Email = document.getElementById("email").value;
+// var username = document.querySelector("");
+// var name = document.querySelector("");
+// var langauge = document.querySelector("");
+// var platform = document.querySelector("");
+// var timezones = document.querySelector(""); 
+// var topic = document.querySelector("");
 
-         var usernames = document.getElementById("username").value;
-         
-         var names = document.getElementById("name").value;
+var userList = [];
 
-         var langauges = document.getElementById("language").value;
-         
-         var Platforms = document.getElementById("platform").value;
-         
-         var timezones = document.getElementById("timezone").value;
-         console.log("timezone",timezones);
-         var Topic = document.getElementById("topic").value;
-     
-         var user = {
-             email: Email,
-             usernames: usernames,
-             name: names,
-             langauge: langauges,
-             platform: Platforms,
-             timezone:timezones,
-             topic:Topic
-         }
+function save() {
+    var Email = document.getElementById("email").value;
 
-         userList.push(user)
-         localStorage.setItem("userList", JSON.stringify(userList));
-         console.log(localStorage);
+    var usernames = document.getElementById("username").value;
 
+    var names = document.getElementById("name").value;
+
+    var langauges = document.getElementById("language").value;
+
+    var Platforms = document.getElementById("platform").value;
+
+    var timezones = document.getElementById("timezone").value;
+    console.log("timezone", timezones);
+    var Topic = document.getElementById("topic").value;
+
+    var user = {
+        email: Email,
+        usernames: usernames,
+        name: names,
+        langauge: langauges,
+        platform: Platforms,
+        timezone: timezones,
+        topic: Topic
     }
-    function get(){
 
-      if (localStorage){
-        var x =  JSON.parse(localStorage.getItem('userList'));
+    userList.push(user)
+    localStorage.setItem("userList", JSON.stringify(userList));
+    console.log(localStorage);
+    // location.href = "./schedule.html"
+
+}
+function get() {
+
+    if (localStorage) {
+        var x = JSON.parse(localStorage.getItem('userList'));
         for (let i = 0; i < x.length; i++) {
             console.log(x[i]);
-            
-        }
- 
-      }
-    }
 
-    var saveBtn = document.querySelector(".submit");
- if(saveBtn){  
-      saveBtn.addEventListener("click", save);
+        }
+
+    }
+}
+
+var saveBtn = document.querySelector(".submit");
+if (saveBtn) {
+    saveBtn.addEventListener("click", save);
 }
 
 get()
 
-$(".classes--QD1OT").on("click", function(){
+$(".classes--QD1OT").on("click", function () {
     var timeslot = $(this).attr("data-timeslot")
     var changeGreen = $(this).addClass("nowgreen")
     
@@ -123,12 +104,12 @@ $(".classes--QD1OT").on("click", function(){
   
 
 
-   localStorage.setItem("userList",JSON.stringify(localUserList))
+    localStorage.setItem("userList", JSON.stringify(localUserList))
 })
-    //save user end
+//save user end
 
 
-    //Luxon Time - use below for reference 
+//Luxon Time - use below for reference 
 
 
 //format for changing timezone
@@ -153,23 +134,152 @@ let timeZoneEl = $('#time-zone').val
 
 console.log(timeZoneEl)
 
-function save() {
-    var checkbox = document.querySelector('input[name=theme]');
 
-checkbox.addEventListener('change', function() {
-    if(this.checked) {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'dark')
-    } else {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'light')
+//loop over object find true val
+//grab the key
+//if m
+
+let addTime = JSON.parse(localStorage.getItem("userList"));
+console.log(addTime[0])
+
+for (const key in addTime[0]) {
+    if (addTime[0][key] === true) {
+        console.log("this the add itemkey",addTime[0][key])
+        console.log(key)
+        
+        switch (key) {
+            case "m-7":
+                console.log("saturday 10am")
+                break;
+            case "m-8":
+                console.log("saturday 10am")
+                break;
+            case "m-9":
+                console.log("saturday 10am")
+                break;
+            case "m-10":
+                console.log("saturday 10am")
+                break;
+            case "t-7":
+                console.log("saturday 10am")
+                break;
+            case "t-8":
+                console.log("saturday 10am")
+                break;
+            case "t-9":
+                console.log("saturday 10am")
+                break;
+            case "t-10":
+                console.log("saturday 10am")
+                break;
+            case "w-7":
+                console.log("saturday 10am")
+                break;
+            case "w-8":
+                console.log("saturday 10am")
+                break;
+            case "w-9":
+                console.log("saturday 10am")
+                break;
+            case "w-10":
+                console.log("saturday 10am")
+                break;
+            case "th-7":
+                console.log("saturday 10am")
+                break;
+            case "th-8":
+                console.log("saturday 10am")
+                break;
+            case "th-9":
+                console.log("saturday 10am")
+                break;
+            case "th-10":
+                console.log("saturday 10am")
+                break;
+            case "f-7":
+                console.log("saturday 10am")
+                break;
+            case "f-8":
+                console.log("saturday 10am")
+                break;
+            case "f-9":
+                console.log("saturday 10am")
+                break;
+            case "f-10":
+                console.log("saturday 10am")
+                break;
+            case "s-7":
+                console.log("saturday 10am")
+                break;
+            case "s-8":
+                console.log("saturday 10am")
+                break;
+            case "s-9":
+                console.log("saturday 10am")
+                break;
+            case "s-10":
+                console.log("saturday 10am")
+                break;
+            case "su-7":
+                console.log("saturday 10am")
+                break;
+            case "su-8":
+                console.log("saturday 10am")
+                break;
+            case "su-9":
+                console.log("saturday 10am")
+                break;
+            case "su-10":
+                console.log("saturday 10am")
+                break;
+
+            default:
+                break;
+        }
+
+        // }
     }
-})
+}
 
-let trans = () => {
-    document.documentElement.classList.add('transition');
-    window.setTimeout(() => {
-        document.documentElement.classList.remove('transition')
-    }, 1000)
-}
-}
+// function save() {
+//     var checkbox = document.querySelector('input[name=theme]');
+
+// checkbox.addEventListener('change', function() {
+//     if(this.checked) {
+//         trans()
+//         document.documentElement.setAttribute('data-theme', 'dark')
+//     } else {
+//         trans()
+//         document.documentElement.setAttribute('data-theme', 'light')
+//     }
+// })
+
+// let trans = () => {
+//     document.documentElement.classList.add('transition');
+//     window.setTimeout(() => {
+//         document.documentElement.classList.remove('transition')
+//     }, 1000)
+// }
+// }
+
+// function save() {
+//     var checkbox = document.querySelector('input[name=theme]');
+
+// checkbox.addEventListener('change', function() {
+//     if(this.checked) {
+//         trans()
+//         document.documentElement.setAttribute('data-theme', 'dark')
+//     } else {
+//         trans()
+//         document.documentElement.setAttribute('data-theme', 'light')
+//     }
+// })
+
+// let trans = () => {
+//     document.documentElement.classList.add('transition');
+//     window.setTimeout(() => {
+//         document.documentElement.classList.remove('transition')
+//     }, 1000)
+// }
+// }
+
