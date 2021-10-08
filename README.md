@@ -3,6 +3,7 @@
 # project_release_partner
 
 ## What is this?
+# NOTE - The live link does NOT use the main branch. It is currently using the "add-_email_time_spartner" timer.
 
 This is a tool to help you find a releasing partner in anytime zone. (this tearm might not familiar to you if you have never used the Sedona Method.)
 
