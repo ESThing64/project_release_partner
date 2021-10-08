@@ -11,7 +11,19 @@
     <title>Your Availability</title>
 </head>
 
+
 <div id="navbarBasicExample" class="navbar-menu">
+    <div class ="tz">
+    <label for="timezone">&emsp;</label>
+    <select id="time-zone" name="zones">
+      <option value="eastern">Eastern Time</option>
+      <option value="central">central</option>
+      <option value="pacific">pacific</option>
+    </select>
+    </div>
+    <input type="submit" class = "timezonedrop">
+
+
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
@@ -23,7 +35,7 @@
     </div>
   </div>
 
-<body>
+<body class="calendarbg">
     <!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
     function addDarkmodeWidget() {
@@ -496,14 +508,7 @@
     
 
 
-  <label for="timezone">Choose a timezone:</label>
-  <select id="time-zone" name="zones">
-    <option value="eastern">Eastern Time</option>
-    <option value="central">central</option>
-    <option value="pacific">pacific</option>
 
-  </select>
-  <input type="submit">
 
 
 
