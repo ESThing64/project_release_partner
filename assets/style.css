@@ -5,9 +5,7 @@
     padding-right: 10%;
 }
 
-.body{
 
-}
 
 html,[data-theme='dark'] {
     --bg:#292929;
@@ -81,14 +79,14 @@ body {
     padding: 0;
 }
 
-body {
+/* body {
     background: no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height:max-content;
-}
+} */
 
 html.transition,
 html.transition *,
@@ -99,3 +97,8 @@ html.transition *::after {
 
 }
 
+.box{
+    width: 500px;
+    height: 300px;
+    border: 5px solid #333;
+}

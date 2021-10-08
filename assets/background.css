@@ -1,0 +1,45 @@
+body {
+    background: no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: aliceblue;
+    text-shadow: 1px 1px 2px #474747;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+
+
+
+.card{
+    display: inline;
+    height: 10vh;
+    width: 10vh;
+   
+
+}
+
+a{
+    color: white;
+    
+    font-weight: bolder;
+    font-size: 5rem;
+    justify-content: space-between;
+    text-decoration: none;
+    border-bottom: 3px solid white;
+    text-shadow: 2px 2px 2px #474747;
+    
+    
+
+}
+
+h1.time {
+    text-align: center;
+}
+    
+
