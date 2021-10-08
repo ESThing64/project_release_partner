@@ -8,7 +8,7 @@ let imgAuthEl = document.getElementById("img-auth");
 var loadPageBtn = $("#loadpage");
 console.log("mainTime:", mainTime);
 console.log("timeNow:", timeNow);
-let freeTime = []
+// let freeTime = []
 let timeAdjust;
 
 
@@ -72,7 +72,7 @@ $('#load-users').on("click", function () {
     let pacificTime = luxon.DateTime.local().setZone("America/Los_Angeles").toFormat("HH")
     let easternTime = luxon.DateTime.local().setZone("America/New_York").toFormat("HH")
 
-    let selectedTime = centralTime
+    let selectedTime = pacificTime
 
     let timeSum = centralTime - selectedTime
     console.log(centralTime)
@@ -82,11 +82,11 @@ $('#load-users').on("click", function () {
     timeAdjust = 0;
 
 
-    // if (timeSum === -1 || timeSum === 23) {
-    //     timeAdjust = 1
-    // } else if (timeSum === 2) {
-    //     timeAdjust = -2
-    // } 
+    if (timeSum === -1 || timeSum === 23) {
+        timeAdjust = 1
+    } else if (timeSum === 2) {
+        timeAdjust = -2
+    } 
 
 
     for (let i = 0; i < x.length; i++) {
@@ -111,8 +111,10 @@ $('#load-users').on("click", function () {
         emailRow.text("Email Address : " + x[i].email)
 
 // this function should only add to the last index that was created.
+let freeTime = [];
         for (const key in addTime[i]) {
             if (addTime[i][key] === true) {
+                
 
 
 
@@ -270,6 +272,7 @@ $('#load-users').on("click", function () {
 
         var timeRow = $("<div class = 'row'>")
         timeRow.text("Time Avalible : " + freeTime)
+        console.log(freeTime)
         // i need free time to show on this line, how? varibable?
         // where is the data now?
 
