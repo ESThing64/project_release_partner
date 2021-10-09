@@ -15,12 +15,12 @@ At this time, this application is only a DEMO of some of the features that are t
 
 ## Technologies Used
 
-*JavaScript
-*JQuery
-*HTML
-*CSS
-*APIs: Unsplash & Luxon
-*CSS framework: Bulma
+* JavaScript
+* JQuery
+* HTML
+* CSS
+* APIs: Unsplash & Luxon
+* CSS framework: Bulma
 
 ## Link to project
 
