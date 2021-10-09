@@ -6,9 +6,7 @@ const timeNow = luxon.DateTime.local().toFormat("hh:mm a");
 
 let imgAuthEl = document.getElementById("img-auth");
 var loadPageBtn = $("#loadpage");
-console.log("mainTime:", mainTime);
-console.log("timeNow:", timeNow);
-// let freeTime = []
+
 let timeAdjust;
 
 
@@ -17,81 +15,67 @@ let timeAdjust;
 
 var userList = [];
 
-function init(){
-    if (localStorage.getItem('userList')){
-    userList = JSON.parse(localStorage.getItem("userList"))
+function init() {
+    if (localStorage.getItem('userList')) {
+        userList = JSON.parse(localStorage.getItem("userList"))
     }
 }
 
 
 init()
 
+//saves the info the user shares. its added to local storage (info.html)
 function save() {
-    
 
     var Email = document.getElementById("email").value;
-
     var usernames = document.getElementById("username").value;
-
     var names = document.getElementById("name").value;
-
     var langauges = document.getElementById("language").value;
-
     var Platforms = document.getElementById("platform").value;
-
-    // var timezones = document.getElementById("timezone").value;
-    // console.log("timezone", timezones);
     var Topic = document.getElementById("topic").value;
-
     var user = {
         email: Email,
         usernames: usernames,
         name: names,
         langauge: langauges,
         platform: Platforms,
-        // timezone: timezones,
         topic: Topic
     }
 
     userList.push(user)
     localStorage.setItem("userList", JSON.stringify(userList));
-    console.log(localStorage);
+
 
 }
+
+// loads the users on the select partner page. 
 
 $('#load-users').on("click", function () {
 
 
     var mainCont = $(".maincontainer")
-
     var x = JSON.parse(localStorage.getItem('userList'));
 
     let addTime = JSON.parse(localStorage.getItem("userList"));
-
     let centralTime = luxon.DateTime.local().setZone("America/Chicago").toFormat("HH")
     let pacificTime = luxon.DateTime.local().setZone("America/Los_Angeles").toFormat("HH")
     let easternTime = luxon.DateTime.local().setZone("America/New_York").toFormat("HH")
-
     let selectedTime = pacificTime
-
     let timeSum = centralTime - selectedTime
-    console.log(centralTime)
-    console.log(easternTime)
-
-    console.log(timeSum)
     timeAdjust = 0;
 
 
+
+    // this is how the time differnce is calculated 
     if (timeSum === -1 || timeSum === 23) {
         timeAdjust = 1
     } else if (timeSum === 2) {
         timeAdjust = -2
-    } 
+    }
 
-
+    // add each users info to the selectpartner.html
     for (let i = 0; i < x.length; i++) {
         var container = $("<div class = 'container col-3'>")
-        // for (let j = 0; j < 5; j++) {
         var userRow = $("<div class = 'row'>")
         userRow.text("username : " + x[i].usernames)
 
@@ -110,11 +94,11 @@ $('#load-users').on("click", function () {
         var emailRow = $("<div class = 'row'>")
         emailRow.text("Email Address : " + x[i].email)
 
-// this function should only add to the last index that was created.
-let freeTime = [];
+
+        let freeTime = [];
         for (const key in addTime[i]) {
             if (addTime[i][key] === true) {
-                
+
 
 
 
@@ -247,72 +231,23 @@ let freeTime = [];
                         break;
                 }
 
-                // }
+
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         var timeRow = $("<div class = 'row'>")
         timeRow.text("Time Avalible : " + freeTime)
-        console.log(freeTime)
-        // i need free time to show on this line, how? varibable?
-        // where is the data now?
-
-
-
-
-
-
-
-
-
-
+        
         container.append(userRow);
         container.append(topicRow);
         container.append(platRow);
         container.append(langRow);
         container.append(emailRow);
-        container.append(timeRow)
-        //add email here
-        mainCont.append(container)
-
-
-
-
-
-
-
+        container.append(timeRow);
+        mainCont.append(container);
     }
-
-
-
-
 }
-
-
 )
-
-
-
-
 
 var saveBtn = document.querySelector(".submit");
 if (saveBtn) {
@@ -320,7 +255,7 @@ if (saveBtn) {
 }
 
 
-
+//When the user clicks on a time slot. it turns the box green and saves it to local storage
 $(".classes--QD1OT").on("click", function (event) {
     event.preventDefault()
     var timeslot = $(this).attr("data-timeslot")
@@ -341,14 +276,9 @@ $(".classes--QD1OT").on("click", function (event) {
 
 
 //Luxon Time - use below for reference 
-
-
-//format for changing timezone
 // let centralTime = luxon.DateTime.local().setZone("America/Chicago").toFormat("hh:mm a")
 // let pacificTime = luxon.DateTime.local().setZone("America/Los_Angeles").toFormat("hh:mm a")
 // let easternTime = luxon.DateTime.local().setZone("America/New_York").toFormat("hh:mm a")
-
-
 //format for 24h time
 luxon.DateTime.local().toFormat("HH:mm ");
 //format for am/pm
@@ -362,36 +292,3 @@ localStorage.setItem("maintime", mainTime)
 let timeZoneEl = $('#time-zone').val
 
 
-
-
-
-// function save() {
-//     var checkbox = document.querySelector('input[name=theme]');
-
-// checkbox.addEventListener('change', function() {
-//     if(this.checked) {
-//         trans()
-//         document.documentElement.setAttribute('data-theme', 'dark')
-//     } else {
-//         trans()
-//         document.documentElement.setAttribute('data-theme', 'light')
-//     }
-// })
-
-// let trans = () => {
-//     document.documentElement.classList.add('transition');
-//     window.setTimeout(() => {
-//         document.documentElement.classList.remove('transition')
-//     }, 1000)
-// }
-// }
-
-// timeNow(10 central time) - timeZone the selects (11)  =   -1
-// timeNow(10central time) - timz(8 cali)    = 2
-
-
-//if var something = -1
-// then +1
-
-// if var something = 2
-// then -2
