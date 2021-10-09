@@ -22,6 +22,9 @@ CSS
 APIs: Unsplash & Luxon
 CSS framework: Bulma
 
+## Link to project
+
+https://esthing64.github.io/project_release_partner/
 
 ## How does it work?
 
