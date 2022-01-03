@@ -5,10 +5,6 @@
 
 This is a tool to help you find a releasing partner in anytime zone. (the term releasing partner might not familiar to you if you have never used the Sedona Method.) The easiest way to explain this is making an analogy to meditation. While releasing isn’t meditation I find the end result to be very similar. A releasing partner will help guide you threw a "mediation" to help you with any area in your life that your are struggling with.   I highly suggest you visit https://www.sedona.com/Home.asp to learn more about this life changing process. 
 
-# Why did I make this?
- This application was inspired by working with my amazing releasing partner who lives in Greece. Since I have started working with him my live has improved drastically in so many different areas. Managing the time difference is always a challenge.
-
-I want this available to you. Yes, you the person reading this. This application, upon its completion will help you find a releasing partner who has the same free time as you. No matter where in the world you live, time differences won’t be a challenge.
 
 # This is just the beginning
 At this time, this application is only a DEMO of some of the features that are to come. Please see the future development section if you would like more information about the direction of this project. It is also to demonstrate our knowledge of working with APIs, local storage, JavaScript, and jQuery.
